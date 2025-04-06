@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 
 # Load the trained model
 try:
-    with open("model.pkl", "rb") as model_file:
+    with open("E:\College Project\Final year project\model1.pkl", "rb") as model_file:
         model = pickle.load(model_file)
 
     # ✅ Ensure the loaded object has the `predict` method
@@ -41,8 +41,8 @@ def predict():
         features = np.array(features, dtype=float).reshape(1, -1)
 
         # ✅ Validate feature count
-        if features.shape[1] != 25:
-            return jsonify({"error": f"Incorrect number of features. Expected {25}, but got {features.shape[1]}"}), 400
+        if features.shape[1] != 14:
+            return jsonify({"error": f"Incorrect number of features. Expected {14}, but got {features.shape[1]}"}), 400
 
         # ✅ Perform prediction using the trained model
         prediction = model.predict(features)
