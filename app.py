@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 
 # Load the trained model
 try:
-    with open("E:\College Project\Final year project\model1.pkl", "rb") as model_file:
+    with open("./model1.pkl", "rb") as model_file:
         model = pickle.load(model_file)
 
     # ✅ Ensure the loaded object has the `predict` method
