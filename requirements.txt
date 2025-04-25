@@ -1,4 +1,5 @@
 flask
+pymongo
 numpy
 scikit-learn
-pandas
+gunicorn
